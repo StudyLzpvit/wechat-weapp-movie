@@ -9,18 +9,17 @@ App({
     //初始化缓存
     this.initStorage()
   },
-  getUserInfo:function(cb){
-    var that = this
-    wx.login({
-      success: function () {
-        wx.getUserInfo({
-          success: function (res) {
-            that.globalData.userInfo = res.userInfo
-            typeof cb == "function" && cb(that.globalData.userInfo)
-          }
-        })
-      }
-    })
+  getUserInfo: function (e) {
+    var that = this;
+    //此处授权得到userInfo
+    console.log(e.detail.userInfo);
+    //接下来写业务代码
+    that.globalData.userInfo = e.detail.userInfo
+    typeof cb == "function" && cb(that.globalData.userInfo)
+    //最后，记得返回刚才的页面
+    // wx.navigateBack({
+    //   delta: 1
+    // })
   },
   getCity: function(cb) {
     var that = this

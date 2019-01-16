@@ -14,3 +14,4 @@
 <template is="filmList" data="{{films: films, hasMore: hasMore, showLoading: showLoading}}"/>
 <import src="../../component/message/message.wxml"/>
 <template is="message" data="{{message: message}}"/>
+<button  open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权信息</button>
